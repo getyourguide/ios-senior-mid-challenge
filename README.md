@@ -1,8 +1,8 @@
 # iOS challenge
 
 ## What to expect
-We want to learn more about how you approach a challenge as an iOS Engineer. 
-For that we prepared a simple app that isn’t made with best practices in mind.
+We want to learn more about how you approach a challenge as an iOS Engineer and for that we prepared a simple app that isn’t made with best practices in mind.
+
 The challenge will be composed of a pair programming session, where we are going to improve and fix some issues in that app, that has a simple requirement:
 
 ```

@@ -42,7 +42,7 @@ class ViewController: UIViewController {
 
     func fetchReviews() {
         let url = URL(
-            string: "https://travelers-api.getyourguide.com/activities/23776/reviews?offset=\(reviews.count)"
+            string: "https://travelers-api.getyourguide.com/activities/251502/reviews?offset=\(reviews.count)"
         )!
 
         _ = networkClient.run(

@@ -92,6 +92,6 @@ class ReviewTableViewCell: BaseTableViewCell {
         dateFormatter.dateStyle = .medium
         dateLabel.text = review.created.map(dateFormatter.string(from:))
         messageLabel.text = review.message
-        authorContentView.configure(with : review.author)
+        authorContentView.configure(with : review.author, reviewID: review.id)
     }
 }

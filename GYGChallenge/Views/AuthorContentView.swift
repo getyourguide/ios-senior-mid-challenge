@@ -67,7 +67,7 @@ class AuthorContentView: BaseView {
         outerStackView.pinEdges(to: self)
     }
 
-    func configure(with authorInfo: AuthorInfo?) {
+    func configure(with authorInfo: AuthorInfo?, reviewID: Int) {
         guard let authorInfo = authorInfo else { return }
 
         var reviewedByContentText = authorInfo.fullName
@@ -77,8 +77,8 @@ class AuthorContentView: BaseView {
         reviewedByContentLabel.text = reviewedByContentText
 
         if
-            let photoURL = authorInfo.photo,
-            let data = try? Data(contentsOf: URL(string: photoURL)!)
+            let photo = authorInfo.photo(reviewID: reviewID),
+            let data = try? Data(contentsOf: URL(string: photo)!)
         {
             imageView.image = UIImage(data: data)
         }

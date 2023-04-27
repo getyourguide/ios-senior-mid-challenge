@@ -23,8 +23,15 @@ struct Review: Codable, Equatable {
 
 struct AuthorInfo: Codable, Equatable {
     var fullName: String
-    var photo: String?
     var country: String?
+}
+
+extension AuthorInfo {
+    func photo(reviewID: Int) -> String? {
+        reviewID % 2 == 0
+        ? "https://loremflickr.com/300/300?lock=\(reviewID)"
+        : nil
+    }
 }
 
 struct Pagination: Codable, Equatable {

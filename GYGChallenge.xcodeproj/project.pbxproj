@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EDB8006E26D1AD4800B1D242 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB8006D26D1AD4800B1D242 /* ReviewTableViewCell.swift */; };
-		EDB8007026D1AF7E00B1D242 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB8006F26D1AF7E00B1D242 /* StarRatingView.swift */; };
+		CB08F60C2CB8116D00828077 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08F60B2CB8116D00828077 /* RatingView.swift */; };
+		CB08F60E2CB8152D00828077 /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08F60D2CB8152D00828077 /* AuthorView.swift */; };
+		CB08F6102CB8197500828077 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08F60F2CB8197500828077 /* ReviewView.swift */; };
+		CB2814B52CCFA3B100539931 /* Sequence+Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2814B42CCFA3B100539931 /* Sequence+Unique.swift */; };
+		CB47D2FD2CCF87C000FB4645 /* ReviewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB47D2FC2CCF87C000FB4645 /* ReviewsListView.swift */; };
 		EDB8007326D1B05E00B1D242 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB8007226D1B05E00B1D242 /* UIView+Extensions.swift */; };
-		EDB8007626D1B42F00B1D242 /* AuthorContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB8007526D1B42F00B1D242 /* AuthorContentView.swift */; };
 		EDB8007B26D273A000B1D242 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB8007A26D273A000B1D242 /* UIImage+Extensions.swift */; };
 		EDBD75F026CFF318000B7C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBD75EF26CFF318000B7C37 /* AppDelegate.swift */; };
 		EDBD75F226CFF318000B7C37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBD75F126CFF318000B7C37 /* SceneDelegate.swift */; };
@@ -42,10 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EDB8006D26D1AD4800B1D242 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
-		EDB8006F26D1AF7E00B1D242 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		CB08F60B2CB8116D00828077 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		CB08F60D2CB8152D00828077 /* AuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
+		CB08F60F2CB8197500828077 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		CB2814B42CCFA3B100539931 /* Sequence+Unique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Unique.swift"; sourceTree = "<group>"; };
+		CB47D2FC2CCF87C000FB4645 /* ReviewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsListView.swift; sourceTree = "<group>"; };
 		EDB8007226D1B05E00B1D242 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		EDB8007526D1B42F00B1D242 /* AuthorContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorContentView.swift; sourceTree = "<group>"; };
 		EDB8007A26D273A000B1D242 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		EDBD75EC26CFF318000B7C37 /* GYGChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GYGChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDBD75EF26CFF318000B7C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 			children = (
 				EDB8007226D1B05E00B1D242 /* UIView+Extensions.swift */,
 				EDB8007A26D273A000B1D242 /* UIImage+Extensions.swift */,
+				CB2814B42CCFA3B100539931 /* Sequence+Unique.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -102,9 +107,10 @@
 		EDB8007426D1B3F200B1D242 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EDB8006F26D1AF7E00B1D242 /* StarRatingView.swift */,
-				EDB8006D26D1AD4800B1D242 /* ReviewTableViewCell.swift */,
-				EDB8007526D1B42F00B1D242 /* AuthorContentView.swift */,
+				CB08F60B2CB8116D00828077 /* RatingView.swift */,
+				CB08F60D2CB8152D00828077 /* AuthorView.swift */,
+				CB08F60F2CB8197500828077 /* ReviewView.swift */,
+				CB47D2FC2CCF87C000FB4645 /* ReviewsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,16 +329,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDB8007026D1AF7E00B1D242 /* StarRatingView.swift in Sources */,
+				CB08F60C2CB8116D00828077 /* RatingView.swift in Sources */,
 				EDBD75F426CFF318000B7C37 /* ViewController.swift in Sources */,
-				EDB8006E26D1AD4800B1D242 /* ReviewTableViewCell.swift in Sources */,
 				EDBD75F026CFF318000B7C37 /* AppDelegate.swift in Sources */,
+				CB08F6102CB8197500828077 /* ReviewView.swift in Sources */,
 				EDBD762326CFF751000B7C37 /* ReviewsResponse.swift in Sources */,
 				EDBD75F226CFF318000B7C37 /* SceneDelegate.swift in Sources */,
+				CB2814B52CCFA3B100539931 /* Sequence+Unique.swift in Sources */,
 				EDB8007326D1B05E00B1D242 /* UIView+Extensions.swift in Sources */,
+				CB47D2FD2CCF87C000FB4645 /* ReviewsListView.swift in Sources */,
 				EDB8007B26D273A000B1D242 /* UIImage+Extensions.swift in Sources */,
+				CB08F60E2CB8152D00828077 /* AuthorView.swift in Sources */,
 				EDBD762026CFF327000B7C37 /* NetworkClient.swift in Sources */,
-				EDB8007626D1B42F00B1D242 /* AuthorContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +519,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6U58DBP3W;
 				INFOPLIST_FILE = GYGChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -530,6 +539,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6U58DBP3W;
 				INFOPLIST_FILE = GYGChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

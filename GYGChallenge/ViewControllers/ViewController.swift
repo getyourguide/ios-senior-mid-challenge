@@ -1,10 +1,13 @@
 //
-// Copyright © 2021 GetYourGuide. All rights reserved.
+// Copyright © 2024 GetYourGuide. All rights reserved.
 //
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
+    let activityId: Int = 251502
+
     var reviews: [Review] = []
     var networkClient: NetworkClient = {
         let networkClient = NetworkClient()
@@ -16,33 +19,17 @@ class ViewController: UIViewController {
         return networkClient
     }()
 
-    let tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 200
-        tableView.register(
-            ReviewTableViewCell.self,
-            forCellReuseIdentifier: ReviewTableViewCell.reuseID
-        )
-
-        return tableView
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.dataSource = self
-        tableView.delegate = self
-        view.addSubview(tableView)
-        tableView.pinEdges(to: view)
+        title = "Reviews for Activity ID \(activityId)"
 
         fetchReviews()
     }
 
     func fetchReviews() {
         let url = URL(
-            string: "https://travelers-api.getyourguide.com/activities/251502/reviews?offset=\(reviews.count)"
+            string: "https://travelers-api.getyourguide.com/activities/\(activityId)/reviews?offset=\(reviews.count)"
         )!
 
         _ = networkClient.run(
@@ -51,34 +38,33 @@ class ViewController: UIViewController {
             switch result {
             case let.success(response):
                 self.reviews.append(contentsOf: response.reviews)
+                // Due to a bug in the API, duplicated reviews can be returned.
+                self.reviews = self.reviews.uniqued()
             case let .failure(error):
                 print(error)
             }
 
-            self.tableView.reloadData()
+            self.addReviewsViewController()
         }
     }
-}
 
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        reviews.count
-    }
+    func addReviewsViewController() {
+        let hostingController = UIHostingController(
+            rootView: ReviewsListView(
+                reviews: reviews,
+                lastRowHasAppeared: { [weak self] in
+                    self?.fetchReviews()
+                }
+            )
+        )
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: ReviewTableViewCell.reuseID
-        ) as! ReviewTableViewCell
-        cell.configure(with: reviews[indexPath.row])
-
-        return cell
-    }
-}
-
-extension ViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == reviews.count - 1 {
-            fetchReviews()
+        addChild(hostingController)
+        if let view = viewIfLoaded {
+            view.addSubview(hostingController.view)
+            hostingController.view.frame = view.bounds
+            hostingController.view.pinEdges(to: view)
         }
+
+        hostingController.didMove(toParent: self)
     }
 }

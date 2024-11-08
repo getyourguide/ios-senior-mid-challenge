@@ -1,5 +1,5 @@
 //
-// Copyright © 2021 GetYourGuide. All rights reserved.
+// Copyright © 2024 GetYourGuide. All rights reserved.
 //
 
 import UIKit
